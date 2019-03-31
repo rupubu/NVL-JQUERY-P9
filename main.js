@@ -32,7 +32,7 @@ $(document).ready( function() {
     }
 
     //Busca si existe un grupo internacional cuyo id sea queen, y si no existe, añádelo dentro de #ochenta #internacional.
-    var Internacional, resultado;
+    var Internacional,
     Internacional = $(".internacional").children("p");
     for (var i = 0; i < Internacional.length; i++) {
         if ( $(Internacional[i]).text() === "Queen" ) { break;}
@@ -44,4 +44,8 @@ $(document).ready( function() {
         alert("No se ha encontrado el grupo: Queen. Se va añadir donde corresponde.");
         $("#ochenta").find(".internacional").append("<p>Queen</p>");
     }    
+
+    $(".internacional").children("p").each( function () {
+        if (this.innerText === "Queen") {alert("Encontrado");}
+    });
 });
